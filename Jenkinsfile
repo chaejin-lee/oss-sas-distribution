@@ -12,19 +12,21 @@ pipeline {
         stage ('Build and Upload Docker Image') {
             steps {
                 script {
-                    //def dockerImage = docker.build("${dockerRegistry}/super-app-server:${version}", "--build-arg version=${version} .")
-                    // sh "docker push ${dockerRegistry}/super-app-server:${version}"
                     sh "docker login hyperregistry.tmaxcloud.org -u admin -p admin"
                     //sh "docker tag celesta30/super-app-tomcat:${version} hyperregistry.tmaxcloud.org/oss-sas-tomcat/super-app-server:${version}"
                     //sh "docker push hyperregistry.tmaxcloud.org/oss-sas-tomcat/super-app-server:${version}"
                     //sh "docker tag celesta30/super-app-wildfly:${version} hyperregistry.tmaxcloud.org/oss-sas-wildfly/super-app-server:${version}"
                     //sh "docker push hyperregistry.tmaxcloud.org/oss-sas-wildfly/super-app-server:${version}"
-                    sh "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
-                    //sh "docker tag hyperregistry.tmaxcloud.org/oss-sas-tomcat/super-app-server:${version} public.ecr.aws/l0p3k1b5/sas-tomcat:${version}"
-                    //sh "docker push public.ecr.aws/l0p3k1b5/sas-tomcat:${version}"
-                    //sh "docker tag hyperregistry.tmaxcloud.org/oss-sas-wildfly/super-app-server:${version} public.ecr.aws/l0p3k1b5/sas-wildfly:${version}"
-                    //sh "docker push public.ecr.aws/l0p3k1b5/sas-wildfly:${version}"
-               }
+                }
+                withCredentials([usernamePassword(credentialsId: 'aws-credentials', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    script {
+                        sh "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+                        //sh "docker tag hyperregistry.tmaxcloud.org/oss-sas-tomcat/super-app-server:${version} public.ecr.aws/l0p3k1b5/sas-tomcat:${version}"
+                        //sh "docker push public.ecr.aws/l0p3k1b5/sas-tomcat:${version}"
+                        //sh "docker tag hyperregistry.tmaxcloud.org/oss-sas-wildfly/super-app-server:${version} public.ecr.aws/l0p3k1b5/sas-wildfly:${version}"
+                        //sh "docker push public.ecr.aws/l0p3k1b5/sas-wildfly:${version}"
+                    }
+               }    
            }
         }
         stage('Send Email') {

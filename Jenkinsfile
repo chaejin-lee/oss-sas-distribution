@@ -6,8 +6,6 @@ pipeline {
         publisher = "${params.Publisher}"
         sendTo = "${params.SendTo}"
         prev_version = "default"
-        repoUser = "root"
-        repoPassword = "tmax@23"
     }
 
     stages {

@@ -50,7 +50,7 @@ pipeline {
  
  금주 배포된 oss-super-app-server-tomcat:${version}, oss-super-app-server-wildfly:${version} release 버전에 대한 안내 및 가이드 메일 드립니다.
 
- ${version}의 개선 및 추가된 사항은 아래 OSS-Super-App-Server Release Note 링크를 참고 부탁드립니다.
+ OSS-SAS-${version}의 개선 및 추가된 사항은 아래 OSS-Super-App-Server Release Note 링크를 참고 부탁드립니다.
  http://192.168.1.150:10081/superobject/super-object/-/wikis/OSS-SAS
 
  ===

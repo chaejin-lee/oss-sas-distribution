@@ -51,20 +51,20 @@ pipeline {
                                  """
   안녕하세요. CL1-1-1팀 ${publisher}입니다.
  
- 금주 배포된 oss-super-app-server-tomcat:${version}, oss-super-app-server-wildfly:${version} release 버전에 대한 안내 및 가이드 메일 드립니다.
+ 금주 배포된 oss-super-app-server-tomcat:${version}, oss-super-app-server-wildfly:${version} release 버전에 대한 안내 및 가이드를 위해 메일 드립니다.
 
- OSS-SAS-${version}의 개선 및 추가된 사항은 아래 OSS-Super-App-Server Release Note 링크를 참고 부탁드립니다.
+ OSS-SAS-${version}의 개선 및 추가된 사항은 아래 OSS-SAS Release Note를 참고하여 주시기 바랍니다.
  http://192.168.1.150:10081/superobject/super-object/-/wikis/OSS-SAS
 
  ===
 
- OSS-Super-App-Server-${version} 버전에서는 다음과 같은 기능이 추가되었습니다.
+ OSS-Super-App-Server-${version} 버전에서는 다음과 같은 기능이 추가/개선 되었습니다.
 
  ${versionFeature}
 
  ===
 
- 구체적인 설치 및 테스트 가이드에 대한 내용은 해당 WIKI 가이드 참고 부탁드립니다.
+ 구체적인 설치 및 테스트 가이드에 대한 내용은 해당 OSS SAS 별 WIKI 가이드 참고 부탁드립니다.
  
  http://192.168.1.150:10081/ck1-1/oss-super-app-service/wikis/Tomcat-SAS-가이드
  http://192.168.1.150:10081/ck1-1/oss-super-app-service/wikis/Wildfly-SAS-가이드

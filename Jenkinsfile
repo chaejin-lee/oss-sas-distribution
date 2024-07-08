@@ -40,6 +40,7 @@ pipeline {
                         'CL1-1, QA': 'clrnd1_1_unit@tmax.co.kr; clpm1_qa_unit@tmax.co.kr;',
                         'CL1-1-1, QA': 'clrnd1_1_1@tmax.co.kr; clpm1_qa_unit@tmax.co.kr;',
                         'CL1-1-1': 'clrnd1_1_1@tmax.co.kr;',
+                        'QA': 'clpm1_qa_unit@tmax.co.kr',
                         'Publisher only': 'chaejin_lee@tmax.co.kr;'
                     ]
                     def fromEmail = publisherEmails[publisher]

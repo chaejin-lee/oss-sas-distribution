@@ -36,8 +36,10 @@ pipeline {
                         '이채진': 'chaejin_lee@tmax.co.kr'
                     ]
                     def sendToEmails = [
-                        'CK RnD, QA': 'clrnd1_div@tmax.co.kr; clpm1_qa_unit@tmax.co.kr;',
-                        'CK1, QA': 'clrnd1_1_unit@tmax.co.kr; clpm1_qa_unit@tmax.co.kr;',
+                        'CL1 RnD, QA': 'clrnd1_div@tmax.co.kr; clpm1_qa_unit@tmax.co.kr;',
+                        'CL1-1, QA': 'clrnd1_1_unit@tmax.co.kr; clpm1_qa_unit@tmax.co.kr;',
+                        'CL1-1-1, QA': 'clrnd1_1_1@tmax.co.kr; clpm1_qa_unit@tmax.co.kr;',
+                        'CL1-1-1': 'clrnd1_1_1@tmax.co.kr;',
                         'Publisher only': 'chaejin_lee@tmax.co.kr;'
                     ]
                     def fromEmail = publisherEmails[publisher]

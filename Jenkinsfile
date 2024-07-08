@@ -14,17 +14,17 @@ pipeline {
                 script {
                     sh "docker login hyperregistry.tmaxcloud.org -u admin -p admin"
                     //sh "docker tag celesta30/super-app-tomcat:${version} hyperregistry.tmaxcloud.org/oss-sas-tomcat/super-app-server:${version}"
-                    sh "docker push hyperregistry.tmaxcloud.org/oss-sas-tomcat/super-app-server:${version}"
+                    //sh "docker push hyperregistry.tmaxcloud.org/oss-sas-tomcat/super-app-server:${version}"
                     //sh "docker tag celesta30/super-app-wildfly:${version} hyperregistry.tmaxcloud.org/oss-sas-wildfly/super-app-server:${version}"
-                    sh "docker push hyperregistry.tmaxcloud.org/oss-sas-wildfly/super-app-server:${version}"
+                    //sh "docker push hyperregistry.tmaxcloud.org/oss-sas-wildfly/super-app-server:${version}"
                 }
                 withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                     script {
                         sh "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
-                        sh "docker tag hyperregistry.tmaxcloud.org/oss-sas-tomcat/super-app-server:${version} public.ecr.aws/l0p3k1b5/sas-tomcat:${version}"
-                        sh "docker push public.ecr.aws/l0p3k1b5/sas-tomcat:${version}"
-                        sh "docker tag hyperregistry.tmaxcloud.org/oss-sas-wildfly/super-app-server:${version} public.ecr.aws/l0p3k1b5/sas-wildfly:${version}"
-                        sh "docker push public.ecr.aws/l0p3k1b5/sas-wildfly:${version}"
+                        //sh "docker tag hyperregistry.tmaxcloud.org/oss-sas-tomcat/super-app-server:${version} public.ecr.aws/l0p3k1b5/sas-tomcat:${version}"
+                        //sh "docker push public.ecr.aws/l0p3k1b5/sas-tomcat:${version}"
+                        //sh "docker tag hyperregistry.tmaxcloud.org/oss-sas-wildfly/super-app-server:${version} public.ecr.aws/l0p3k1b5/sas-wildfly:${version}"
+                        //sh "docker push public.ecr.aws/l0p3k1b5/sas-wildfly:${version}"
                     }
                }    
            }

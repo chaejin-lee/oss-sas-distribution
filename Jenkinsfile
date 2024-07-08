@@ -58,6 +58,12 @@ pipeline {
 
  ===
 
+ OSS-Super-App-Server-${version} 버전에서는 다음과 같은 기능이 추가되었습니다.
+
+ ${versionFeature}
+
+ ===
+
  구체적인 설치 및 테스트 가이드에 대한 내용은 해당 WIKI 가이드 참고 부탁드립니다.
  
  http://192.168.1.150:10081/ck1-1/oss-super-app-service/wikis/Tomcat-SAS-가이드
